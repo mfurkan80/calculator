@@ -12,6 +12,8 @@
     --text-secondary: #7a7a7a;
     --orange-color: #fca311;
     --op-bg-color: #b9b9bb;
+    --sw-bg-color: #86858a;
+    
 }
 
 .dark-mode {
@@ -20,6 +22,7 @@
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
     --orange-color: #2ec4b6;
+    --sw-bg-color: #d1d8e0;
 }
 
 body{
@@ -92,3 +95,63 @@ body{
     color: #fff;
 }
 
+.theme-switch-checkbox{
+    display: none;
+}
+
+
+.theme-toggler {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.theme-switch-label {
+    background-color: var(--sw-bg-color);
+    width: 70px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative; 
+    display: flex; 
+    cursor: pointer;
+    overflow: hidden; 
+}
+
+
+.theme-switch-label i {
+    font-size: 14px;
+    color: #555; 
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); 
+    z-index: 10;              
+    transition: color 0.3s ease; 
+}
+
+
+.theme-switch-label i.sun {
+    left: 5px; 
+}
+
+.theme-switch-label i.moon {
+    right: 5px; 
+}
+
+
+.theme-switch-label::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff; 
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+    z-index: 5; 
+}
+
+
+.theme-switch-checkbox:checked + .theme-switch-label::after {
+    transform: translateX(40px);
+}
