@@ -62,6 +62,7 @@ body{
     color: var(--text-primary);
     word-wrap: break-word;
     word-break: break-all;
+    min-height: 64px;
 }
 
 .buttons{
