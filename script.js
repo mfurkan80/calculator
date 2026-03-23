@@ -22,6 +22,9 @@ numberButtons.forEach(button => {
         if (button.innerText === "," && currentInput.includes(",")) {
             return;
         }
+        if (button.innerText === operatorButtons && currentInput.includes(operatorButtons)) {
+            return;
+        }
         currentInput += button.innerText;
         updateDisplay();
         
@@ -33,6 +36,12 @@ operatorButtons.forEach(button => {
 
     button.addEventListener("click", () => {
         if (currentInput === "") return;
+        let lastchar = currentInput.slice(-1);
+        if(['+', '-', 'x', '÷', '%'].includes(lastchar)) {
+            currentInput = currentInput.slice(0, -1) + button.innerText;
+            updateDisplay();
+            return;
+        }
         currentInput += button.innerText;
         updateDisplay();
     });
