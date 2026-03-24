@@ -13,7 +13,7 @@
     --orange-color: #fca311;
     --op-bg-color: #b9b9bb;
     --sw-bg-color: #86858a;
-    
+    --line-color: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
@@ -23,6 +23,7 @@
     --text-secondary: #a0a0a0;
     --orange-color: #2ec4b6;
     --sw-bg-color: #d1d8e0;
+    --line-color: rgba(255, 255, 255, 0.2);
 }
 
 body{
@@ -69,6 +70,15 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
+    border-top: 1px solid var(--line-color);
+    margin-left: -20px; 
+    margin-right: -20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .btn{
